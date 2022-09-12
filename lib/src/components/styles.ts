@@ -1,17 +1,17 @@
-import { StyleSheet, Dimensions } from 'react-native'
+import { StyleSheet } from 'react-native';
 
 export const commonStyles = StyleSheet.create({
   container: {
-    flex: 1
+    flex: 1,
   },
   contentContainer: {
-    backgroundColor: 'transparent'
+    backgroundColor: 'transparent',
   },
   foregroundContainer: {
     flex: 1,
-    backgroundColor: 'transparent'
-  }
-})
+    backgroundColor: 'transparent',
+  },
+});
 
 export const stretchyImageStyles = StyleSheet.create({
   wrapper: {
@@ -19,7 +19,6 @@ export const stretchyImageStyles = StyleSheet.create({
     position: 'absolute',
   },
   animatedImageBackground: {
-    width: Dimensions.get('window').width,
     flex: 1,
   },
 });

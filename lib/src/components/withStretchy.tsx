@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Animated } from 'react-native';
+import { View, Animated, Dimensions } from 'react-native';
 import { commonStyles } from './styles';
 import { StretchyProps } from '../types';
 import { StretchyImage } from './stretchyImage';
@@ -27,6 +27,7 @@ export const WithStretchy = <R, P>(
       image,
       imageOverlay,
       imageHeight,
+      imageWidth,
       imageWrapperStyle,
       imageResizeMode,
       onScroll,
@@ -45,6 +46,7 @@ export const WithStretchy = <R, P>(
           imageWrapperStyle={imageWrapperStyle}
           animation={stretchy.animation}
           imageHeight={imageHeight || stretchy.heightBasedOnRatio}
+          imageWidth={imageWidth || Dimensions.get('window').width}
           imageOverlay={imageOverlay}
           onLayout={stretchy.onImageWrapperLayout}
         />

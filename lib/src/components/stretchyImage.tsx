@@ -8,6 +8,7 @@ export interface StretchyImageProps
   extends Omit<StretchyProps, 'backgroundColor' | 'foreground' | 'onScroll'> {
   animation: Animated.Value;
   imageHeight: number;
+  imageWidth: number;
   onLayout(event: LayoutChangeEvent): void;
 }
 
@@ -17,6 +18,7 @@ export const StretchyImage: React.FC<StretchyImageProps> = ({
   imageResizeMode,
   imageWrapperStyle,
   imageHeight,
+  imageWidth,
   imageOverlay,
   onLayout,
 }) => {
@@ -47,7 +49,11 @@ export const StretchyImage: React.FC<StretchyImageProps> = ({
       <AnimatedImageBackground
         source={image || {}}
         resizeMode={imageResizeMode}
-        style={[styles.animatedImageBackground, transformStyles]}>
+        style={[
+          styles.animatedImageBackground,
+          transformStyles,
+          { width: imageWidth },
+        ]}>
         {Boolean(imageOverlay) && imageOverlay}
       </AnimatedImageBackground>
     </View>

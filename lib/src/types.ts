@@ -11,6 +11,7 @@ export interface StretchyProps {
   backgroundColor?: string;
   image?: StretchyImage;
   imageHeight?: number;
+  imageWidth?: number;
   imageResizeMode?: ReactNative.ImageResizeMode;
   imageWrapperStyle?: ReactNative.ViewStyle;
   imageOverlay?: React.ReactElement;
